@@ -1,0 +1,38 @@
+--DML Commands--
+
+--To create table
+create table Emp(EID int, EName varchar(15), SAL int);
+
+--To see the strycture of table 
+SP_help EMP;
+
+alter table Emp alter column Sal int; 
+--Insert Command
+Insert into Emp values(101,'Raj',9000), 
+(102,'Rajesh',10000),
+(103,'Rajini',8000),
+(104,'Ansh',12000),
+(105,'Ansh',10000),
+(106,'Anshika',12000),
+(107,'Aahish',20000),
+(108,'Amrit',22000),
+(109,'Deepali',22000),
+(1010,'Rahon',19000); 
+
+--Select Commmand
+Select*from EMP;
+--Retriving specific columns
+Select EName,SAL  from EMP;
+
+Select*from EMP
+where EID=101;
+
+--Update Command
+update EMP set Sal=10000;
+update EMP set Sal=1000
+where EID=102;
+
+--Delete Command
+delete from EMP;
+delete  from EMP
+where EID=102;
