@@ -1,0 +1,41 @@
+--DDL Commands---
+
+--Create Commmand--
+--To craete database
+create database Recods;
+--To Activate database
+use std_Records;
+alter database Recods modify name= std_Records;
+--To craete table
+create table Student(
+Id int Primary Key Identity,
+Fname varchar(50),
+Lname varchar(50),
+Email varchar(100),
+Mobile varchar(15)
+);
+--To see structure of table
+SP_Help Student;
+ 
+ --Alter Command--
+
+ --Alter column
+ alter table Student Alter Column Mobile varchar(12);
+ --Alter ADD Column
+ alter table Student Add Address varchar(200);
+ --Alter Drop column
+ alter table Student drop column Address;
+
+ --Rename Command--
+ --To Rename table
+ SP_rename 'Student','Employees';
+  --To Rename column
+ SP_rename 'Employees.email','Address';
+ --To Rename database
+ alter database Recods modify name= std_Records;
+
+ --Truncate Command--
+ truncate table Employees;
+
+ --Drop Command--
+ drop table  Employees;
