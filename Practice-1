@@ -1,0 +1,43 @@
+create database student_Info;
+use Student_info;
+create table student(SID int,Sname varchar(15), MathMarks int, PhysicsMarks int, ChemistryMark int);
+
+Insert into Student(SID,Sname, MathMarks, PhysicsMarks, ChemistryMark)
+values(101,'Ankit Kumar',80,65,70),
+(102,'Amrit Kuar',90,80,70), 
+(103,'Ansh Kumar',80,90,80), 
+(104,'Chandan Kumar',60,50,60), 
+(105,'Chhavi Kumari',30,40,30), 
+(106,'Deepak Kumar',40,30,40), 
+(108,'Harshit Kumar',50,40,30),
+(109,'Muskan Sagar',16,30,20),
+(111,'Rahul Kumar',18,20,10),
+(112,'Rahul Kumar',19,30,10),
+(113,'Sonu Kumar',21,30,40),
+(112,'Rahul Kumar',19,18,10);
+
+alter table student Add Tatal int;
+
+SP_Rename 'student.tatal','total';
+
+alter table student Add Average int;
+
+alter table student Add Division varchar(max);
+
+select * from student;
+
+update student set total=MathMarks+PhysicsMarks+ ChemistryMark;
+
+update student set average=Total/3;
+
+update student set Division=
+
+Case 
+When average>=60 then 'First Division'
+
+When average>=50 then 'Second Division'
+
+When average>=40 then 'Third Division'
+else
+'Fail'
+End;
